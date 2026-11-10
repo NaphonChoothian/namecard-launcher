@@ -13,17 +13,42 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="manifest" href="manifest.webmanifest">
-<meta http-equiv="refresh" content="0; url=https://script.google.com/a/macros/2itz.studio/s/AKfycby4uWrSFODdeY-jejqe5nMJ8yaWuUCNkC7ho4oY_5R2aPs6d6SRLwj8nfdCpOt2HOY/exec">
+<script>
+  // Redirect only when launched from the home-screen icon. In a normal browser tab we stay on this page,
+  // otherwise "Add to Home Screen" would save the script.google.com page (no icon) instead of this launcher.
+  (function () {
+    var standalone = window.navigator.standalone === true ||
+      (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+    if (standalone) location.replace("https://script.google.com/a/macros/2itz.studio/s/AKfycby4uWrSFODdeY-jejqe5nMJ8yaWuUCNkC7ho4oY_5R2aPs6d6SRLwj8nfdCpOt2HOY/exec");
+  })();
+</script>
 <style>
+  * { box-sizing: border-box; }
   body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-         background: #FAF7F4; color: #2B2B2B; font: 17px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  a { display: inline-block; padding: 14px 22px; border-radius: 12px; background: #E83E20; color: #fff;
-      font-weight: 700; text-decoration: none; }
-  @media (prefers-color-scheme: dark) { body { background: #1C1B1A; color: #F1EDE9; } }
+         background: #FAF7F4; color: #2B2B2B; font: 17px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 420px; padding: 32px 20px; text-align: center; }
+  img { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 24px; margin: 14px 0 6px; }
+  a.btn { display: inline-block; margin: 18px 0 26px; padding: 14px 22px; border-radius: 12px; background: #E83E20;
+          color: #fff; font-weight: 700; text-decoration: none; }
+  ol { text-align: left; margin: 0 auto; padding-left: 22px; }
+  li { margin: 6px 0; }
+  p.muted { color: #6E6A66; font-size: 14px; }
+  @media (prefers-color-scheme: dark) { body { background: #1C1B1A; color: #F1EDE9; } p.muted { color: #A9A29C; } }
 </style>
-<script>location.replace("https://script.google.com/a/macros/2itz.studio/s/AKfycby4uWrSFODdeY-jejqe5nMJ8yaWuUCNkC7ho4oY_5R2aPs6d6SRLwj8nfdCpOt2HOY/exec");</script>
 </head>
 <body>
-<a href="https://script.google.com/a/macros/2itz.studio/s/AKfycby4uWrSFODdeY-jejqe5nMJ8yaWuUCNkC7ho4oY_5R2aPs6d6SRLwj8nfdCpOt2HOY/exec">Open Namecard Capture</a>
+<main>
+  <img src="icons/apple-touch-icon.png" alt="">
+  <h1>Namecard</h1>
+  <p class="muted">2itz Namecard Capture</p>
+  <a class="btn" href="https://script.google.com/a/macros/2itz.studio/s/AKfycby4uWrSFODdeY-jejqe5nMJ8yaWuUCNkC7ho4oY_5R2aPs6d6SRLwj8nfdCpOt2HOY/exec">Open Namecard Capture</a>
+  <p><b>Put it on your home screen</b> (while this page is open):</p>
+  <ol>
+    <li><b>iPhone:</b> in Safari tap Share → <b>Add to Home Screen</b>.</li>
+    <li><b>Android:</b> in Chrome tap ⋮ → <b>Add to Home screen</b> or <b>Install app</b>.</li>
+  </ol>
+  <p class="muted">The home-screen icon opens the app directly.</p>
+</main>
 </body>
 </html>
